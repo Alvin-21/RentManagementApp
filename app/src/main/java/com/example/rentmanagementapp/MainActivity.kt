@@ -1,5 +1,6 @@
 package com.example.rentmanagementapp
 
+import android.content.Intent
 import android.os.Bundle
 import android.widget.Button
 import android.widget.EditText
@@ -30,6 +31,12 @@ class MainActivity : ComponentActivity() {
             val firstName = firstNameInput.text.toString()
             val secondName = secondNameInput.text.toString()
             val rentAmount = rentAmountInput.text.toString()
+
+            val intent = Intent(this, SecondActivity::class.java)
+            intent.putExtra("FIRST_NAME", firstName)
+            intent.putExtra("SECOND_NAME", secondName)
+            intent.putExtra("RENT_AMOUNT", rentAmount)
+            startActivity(intent)
         }
     }
 }
